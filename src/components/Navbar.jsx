@@ -24,12 +24,12 @@ const Navbar = () => {
           <li className="p-4">
             <Link href="/#about"> About Me </Link>
           </li>
-          <li className="p-4">
+          {/* <li className="p-4">
             <Link href="/toys"> Cool Components </Link>
-          </li>
-          <li className="p-4">
+          </li> */}
+          {/* <li className="p-4">
             <Link href="/contacts"> Contacts </Link>
-          </li>
+          </li> */}
         </ul>
         {/* Mobile  Button*/}
         <div onClick={handleNav} className="block sm:hidden z-10">
@@ -54,12 +54,12 @@ const Navbar = () => {
             <li className="p-4 text-4xl hover:text-gray-500">
               <Link href="/#about"> About Me </Link>
             </li>
-            <li className="p-4 text-4xl hover:text-gray-500">
+            {/* <li className="p-4 text-4xl hover:text-gray-500">
               <Link href="/toys"> Cool Components </Link>
-            </li>
-            <li className="p-4 text-4xl hover:text-gray-500">
+            </li> */}
+            {/* <li className="p-4 text-4xl hover:text-gray-500">
               <Link href="/contacts"> Contacts </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
