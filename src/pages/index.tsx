@@ -51,9 +51,9 @@ export default function Home() {
             {/* About Me Text */}
             <div className="max-w-md mr-10">
               <div className="my-2">
-                Hi, I'm Fábio, a passionate software engineer with a strong
+                Hi, I&apos;m Fábio, a passionate software engineer with a strong
                 affinity for the MERN stack. With 2 years of professional
-                experience under my belt, I've had the opportunity to immerse
+                experience under my belt, I&apos;ve had the opportunity to immerse
                 myself in exciting projects that have greatly enhanced my
                 technical skills and knowledge of the stack.
               </div>
@@ -64,12 +64,12 @@ export default function Home() {
                 proficiency leans towards the frontend.
               </div>
               <div className="my-2">
-                Currently, I'm on a quest to earn my next gym badge in DevOps.
+                Currently, I&apos;m on a quest to earn my next gym badge in DevOps.
                 Although I may not be able to conquer it alone just yet, I
                 possess a solid understanding of both relational and
-                non-relational databases, Docker, and Linux systems. I'm always
+                non-relational databases, Docker, and Linux systems. I&apos;m always
                 eager to expand my knowledge in these areas. Beyond coding, I
-                have a diverse range of personal interests. I'm passionate about
+                have a diverse range of personal interests. I&apos;m passionate about
                 fitness and enjoy staying active. Dogs hold a special place in
                 my heart, and spending time with mine is always time well spent.
                 Volleyball, cooking, and chess are also among my favorite
@@ -77,13 +77,13 @@ export default function Home() {
               </div>
 
               <div className="my-2">
-                If you're looking for someone to join you for a beer, you'll
+                If you&apos;re looking for someone to join you for a beer, you&apos;ll
                 likely find me in a sunny spot, ready for a great conversation.
-                Feel free to reach out if you'd like to connect or discuss
+                Feel free to reach out if you&apos;d like to connect or discuss
                 exciting opportunities!{" "}
               </div>
               <div className="my-2">
-                Here are a few technologies I’ve been working with recently:
+                Here are a few technologies I&apos;ve been working with recently:
               </div>
 
               <div className="flex flow-row flex-wrap">
@@ -193,7 +193,7 @@ export default function Home() {
                 ) : tabSelected === "University" ? (
                   <>
                     <div className="font-semibold">
-                      Master's degree, Computer Science and Engineering
+                      Master&apos;s degree, Computer Science and Engineering
                     </div>
                     <div className="text-sm">
                       Instituto Superior Técnico (2019 - 2021)
@@ -202,7 +202,7 @@ export default function Home() {
                     <div className="mt-2">Cyber security specialization</div>
 
                     <div className="font-semibold mt-4">
-                      Bachelor's degree, Computer Science and Engineering
+                      Bachelor&apos;s degree, Computer Science and Engineering
                     </div>
                     <div className="text-sm">
                       Instituto Superior Técnico (2015 - 2019)
@@ -276,7 +276,7 @@ export default function Home() {
                 {" "}
                 Developed a fullstack web application to centralize a candidate
                 repository with graphics analytics that enable talent recruiters
-                to match each candidate to a company’s demands.
+                to match each candidate to a company&apos;s demands.
               </div>
               {/* Tech */}
               <div className="flex flow-row flex-wrap w-full justify-start">
@@ -309,142 +309,7 @@ export default function Home() {
         <div className="h-36"></div>
 
         {/* Text */}
-        {/* <div className="flex flex-col w-auto justify-between text-start bg-white">
-          <div className="h-24"></div>
-          <h2 className="font-semibold text-2xl text-zinc-800">Education:</h2>
-          <div className="font-semibold">
-            Bachelor's degree, Computer Science and Engineering
-          </div>
-          <div className="text-md">
-            Instituto Superior Técnico (2015 - 2019)
-          </div>
-
-          <div className="font-semibold mt-2">
-            Master's degree, Computer Science and Engineering
-          </div>
-          <div className="text-md">
-            Instituto Superior Técnico (2019 - 2021)
-          </div>
-
-          <h2 className="mt-4 font-semibold text-xl">Experience:</h2>
-
-          <div className="flex flex-col w-full">
-            <div className="font-semibold">
-              Fullstack Developer, Asistobe AS · Asistobe AS ( Nov 2021 - Today
-              )
-            </div>
-            <div>
-              Responsible for developing and maintaining a web tool for the
-              optimization of public transportation.
-            </div>
-            <div className="flex flow-row flex-wrap">
-              <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mr-1">
-                ReactJS
-              </div>
-              <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mx-1">
-                NodeJS
-              </div>
-              <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mx-1">
-                ExpressJS
-              </div>
-              <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mx-1">
-                MongoDB
-              </div>
-              <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mx-1">
-                Git
-              </div>
-              <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mx-1">
-                Docker
-              </div>
-              <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mx-1">
-                AWS
-              </div>
-              <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mx-1">
-                Tailwind
-              </div>
-              <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mx-1">
-                Javascript
-              </div>
-              <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mx-1">
-                Jest
-              </div>
-            </div>
-          </div>
-
-          <h2 className="font-semibold text-xl mt-4">Projects:</h2>
-          <div className="flex flex-col w-full">
-            <div>
-              <div className="font-semibold">
-                Master Thesis - Seamless Ticketing SDK 2021
-              </div>
-              <div>
-                Developed an SDK that provides ticket validation and trip
-                management functionalities for public transportation mobile
-                aplications. The dissertation had as base tecnologies Bluetooth
-                Low Energy and QR-Code for is base features and was built with
-                Kotlin Multiplatform Mobile to be cross platform.
-              </div>
-              <div className="flex flow-row flex-wrap">
-                <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mr-1 min-w-max">
-                  Kotlin Multiplatform Mobile
-                </div>
-                <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mx-1">
-                  SQLite
-                </div>
-                <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mx-1">
-                  Swift
-                </div>
-                <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mx-1">
-                  Java
-                </div>
-                <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mx-1">
-                  BLE
-                </div>
-                <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mx-1">
-                  QR-Code
-                </div>
-              </div>
-            </div>
-
-            <div className="my-2">
-              <div className="font-semibold">
-                Talent Pool Web App - Startup Project 2021
-              </div>
-              <div>
-                Developed and sold a fullstack web application to ’Cross Border
-                Talent’ (CBT). CBT opened a proposal for a solution to organise,
-                within a central dashboard, their outsourcing candidates
-                (including cv, DISC results, work-field, etc). Along with two
-                University friends, delivered a concept solution and executed
-                the solution in accordance to CBT requirements. With the help of
-                the internal application, CBT now has a centralized candidate
-                repository with graphics analytics that enable talent recruiters
-                to match each candidate to a company’s demands.
-              </div>
-              <div className="flex flow-row flex-wrap ">
-                <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mr-1">
-                  Javascript
-                </div>
-                <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mx-1">
-                  HTML
-                </div>
-                <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mx-1">
-                  CSS
-                </div>
-                <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mx-1">
-                  Firebase
-                </div>
-                <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mx-1">
-                  Firestore
-                </div>
-                <div className="border-2 border-zinc-400 rounded-md p-1 text-xs mx-1">
-                  Authentication
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="h-24"></div>
-        </div> */}
+       
         {/* End Curriculum */}
       </div>
 

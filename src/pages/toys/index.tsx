@@ -12,12 +12,12 @@ const CoolComponents = () => {
         </h2>
         <p>
           Instituto Superior Técnico -
-          Bachelor's degree, Computer Science and Engineering
+          Bachelor&apos;s degree, Computer Science and Engineering
           (2015 - 2019)
         </p>
         <p>
           Instituto Superior Técnico -
-          Master's degree, Computer Science and Engineering
+          Master&apos;s degree, Computer Science and Engineering
           (2019 - 2021)
         </p>
 
