@@ -40,7 +40,16 @@ export default function Home() {
     return windowSize;
   }
 
+//   <div className="flex sm:flex-row flex-col-reverse h-screen w-full sm:justify-center justify-start bg-teal-300">
+//   <div className="sm:h-screen sm:w-2/5 w-full h-16">
+//     <Profilepicture></Profilepicture>
+//   </div>
 
+//   <div className="flex flex-col justify-center max-w-xl font-mono font-extrabold text-5xl text-zinc-700 w-3/5 mx-4">
+//     <div className="py-4 border-b-4">Fábio Pimenta</div>
+//     <div className="py-4 text-3xl sm:mt-4">Software Engineer</div>
+//   </div>
+// </div>
   return (
     <>
       <Head>
@@ -52,8 +61,8 @@ export default function Home() {
 
       <div className="flex flex-col w-full h-full bg-gray-100">
         {/* Hero */}
-        <div className="sm:flex-row flex flex-col  h-screen w-full sm:justify-center justify-start">
-          <div className="sm:h-screen sm:w-2/5 w-full h-16">
+        <div className="flex sm:flex-row flex-col-reverse h-screen w-full sm:justify-center justify-start">
+          <div className="sm:h-screen sm:w-2/5 w-full h-96">
             <Profilepicture></Profilepicture>
           </div>
 
@@ -64,7 +73,7 @@ export default function Home() {
         </div>
 
         {/* About Me */}
-        <div className="h-36"></div>
+        <div className="h-96 sm:h-24"></div>
         <div className="flex flex-col w-3/4  self-center">
           <div className="flex flex-row w-full content-start ">
             <div className="sm:w-6 py-4"></div>
@@ -165,12 +174,12 @@ export default function Home() {
         <div className="h-36"></div>
         <div className="flex flex-row w-full justify-center">
           <div className="flex flex-col w-auto py-4  h-96 self-center ">
-            <div className="flex flex-row w-full content-start">
+            <div className="flex flex-row w-full content-start items-center ">
               <div className="w-6 py-4"></div>
-              <h2 className="font-semibold text-3xl text-zinc-800 py-4">
+              <h2 className="font-semibold text-xl text-zinc-800 py-4 sm:text-3xl">
                 Professional Journey
               </h2>
-              <div className={`border-b-2 ml-10 h-9 border-zinc-400 ${size.width > 700 ? 'w-44': 'w-12'}`}></div>
+              <div className={`border-b-2 ml-10 h-0 border-zinc-400 ${size.width > 700 ? 'w-44': 'w-3/12 mr-2'}`}></div>
             </div>
 
             <div className="flex flex-row h-50">
@@ -179,7 +188,7 @@ export default function Home() {
                 <button
                   className={
                     tabSelected === "Asistobe"
-                      ? "p-2 border-l-4 border-gray-300"
+                      ? "p-2 border-l-4 border-gray-500"
                       : "p-2 pl-3"
                   }
                   onClick={() => {
@@ -191,7 +200,7 @@ export default function Home() {
                 <button
                   className={
                     tabSelected === "University"
-                      ? "p-2 border-l-4 border-gray-300"
+                      ? "p-2 border-l-4 border-gray-500"
                       : "p-2 pl-3"
                   }
                   onClick={() => {
@@ -247,12 +256,12 @@ export default function Home() {
         <div className="flex flex-col w-full justify-center">
           <div className="flex flex-col w-auto py-4 self-center ">
             {/* Section Header */}
-            <div className="flex flex-row w-full content-start mb-12">
+            <div className="flex flex-row w-full content-start mb-12 items-center">
               <div className="w-6 py-4"></div>
               <h2 className="font-semibold text-3xl text-zinc-800 py-4">
                 Projects
               </h2>
-              <div className="border-b-2 ml-10 w-44 h-9 border-zinc-400 "></div>
+              <div className="border-b-2 ml-10 w-44 h-0 border-zinc-400 "></div>
             </div>
           </div>
           <div className="flex w-full items-center justify-center h-44">
@@ -341,14 +350,14 @@ export default function Home() {
         {/* Mobile Component */}
         <div className="flex flex-col w-full justify-center">
 
-          <div className="flex w-auto py-4 self-center">
+          <div className="flex w-full py-4 self-center">
             {/* Section Header */}
-            <div className="flex flex-row w-full content-start mb-4">
+            <div className="flex flex-row w-full content-start mb-4 items-center">
               <div className="w-6 py-4"></div>
               <h2 className="font-semibold text-3xl text-zinc-800 py-4">
                 Projects
               </h2>
-              <div className="border-b-2 ml-10 w-44 h-9 border-zinc-400 "></div>
+              <div className="border-b-2 ml-10 w-full h-0 border-zinc-400 bg-red-500 mr-6" ></div>
             </div>
           </div>
 
