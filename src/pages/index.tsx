@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
 import Profilepicture from "../components/Profilepicture";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import LinkedinIcon from "../components/svgs/linkedinIcon.svg";
 import InstagramIcon from "../components/svgs/instagram-svgrepo-com.svg";
@@ -12,7 +12,34 @@ import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const size = useWindowSize();
+  console.log('size',size)
+
   const [tabSelected, setTabSelected] = useState("Asistobe");
+
+  function useWindowSize() {
+    const [windowSize, setWindowSize] = useState({
+      width: 1920,
+      height: 1080,
+    });
+  
+    useEffect(() => {
+      function handleResize() {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+      
+      window.addEventListener("resize", handleResize);
+       
+      handleResize();
+      
+      return () => window.removeEventListener("resize", handleResize);
+    }, []); 
+    return windowSize;
+  }
+
 
   return (
     <>
@@ -38,16 +65,16 @@ export default function Home() {
 
         {/* About Me */}
         <div className="h-36"></div>
-        <div className="flex flex-col w-3/4  self-center ">
-          <div className="flex flex-row w-full content-start">
-            <div className="w-6 py-4"></div>
+        <div className="flex flex-col w-3/4  self-center">
+          <div className="flex flex-row w-full content-start ">
+            <div className="sm:w-6 py-4"></div>
             <h2 className="font-semibold text-3xl text-zinc-800 py-4">
               About Me
             </h2>
-            <div className="border-b-2 ml-10 w-44 h-9 border-zinc-400 "></div>
+            <div className="border-b-2 ml-10 sm:w-44 h-9 w-24 border-zinc-400 "></div>
           </div>
 
-          <div className="flex flex-row font-semibold w-full justify-between">
+          <div className="flex flex-col font-semibold w-full justify-between sm:flex-row ">
             {/* About Me Text */}
             <div className="max-w-md mr-10">
               <div className="my-2">
@@ -122,8 +149,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* <LinkedinIcon className="w-full h-full"></LinkedinIcon> */}
-            <div className="flex-none relative h-96 w-96">
+            <div className="flex-none relative sm:h-96 sm:w-96 sm:mt-0 mt-10  h-56 w-56 ">
               <Image
                 className="rounded-full hover:animate-pulse"
                 src="/Hotpot.png"
@@ -144,7 +170,7 @@ export default function Home() {
               <h2 className="font-semibold text-3xl text-zinc-800 py-4">
                 Professional Journey
               </h2>
-              <div className="border-b-2 ml-10 w-44 h-9 border-zinc-400 "></div>
+              <div className={`border-b-2 ml-10 h-9 border-zinc-400 ${size.width > 700 ? 'w-44': 'w-12'}`}></div>
             </div>
 
             <div className="flex flex-row h-50">
@@ -215,6 +241,8 @@ export default function Home() {
         </div>
 
         {/* Projects */}
+
+        {size.width > 700 ? 
 
         <div className="flex flex-col w-full justify-center">
           <div className="flex flex-col w-auto py-4 self-center ">
@@ -306,12 +334,119 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="h-36"></div>
 
+        :
+        
+        <>
+        {/* Mobile Component */}
+        <div className="flex flex-col w-full justify-center">
+
+          <div className="flex w-auto py-4 self-center">
+            {/* Section Header */}
+            <div className="flex flex-row w-full content-start mb-4">
+              <div className="w-6 py-4"></div>
+              <h2 className="font-semibold text-3xl text-zinc-800 py-4">
+                Projects
+              </h2>
+              <div className="border-b-2 ml-10 w-44 h-9 border-zinc-400 "></div>
+            </div>
+          </div>
+
+
+          {/* First Project */}
+          <div className="flex flex-col w-full h-full items-center justify-center">
+            {/* Image */}
+            <div className="flex-none relative h-52 w-full z-10 shadow-sm">
+              <Image
+                src="/card4B.png"
+                alt="Card4B Logo"
+                layout="fill"
+                objectFit="contain"
+              ></Image>
+            </div>
+            {/* Text and Banner */}
+            <div className="flex flex-col h-56  w-11/12 z-20 items-center my-5">
+              <div className="flex flex-row w-full justify-end text-gray-800 font-semibold text-lg text-right p-2">
+                Seamless Ticketing SDK
+              </div>
+              <div className="h-auto w-auto bg-gray-600 p-3 text-white text-base font-sm shadow-2xl rounded-sm">
+                {" "}
+                Developed an SDK that provides ticket validation and trip
+                management functionalities for public transportation mobile
+                aplications.
+              </div>
+              {/* Tech */}
+              <div className="flex flow-row flex-wrap w-full justify-end">
+                <div className="flex flex-row mr-4 my-1">
+                  <ChevronRightIcon className="h-4 self-center"></ChevronRightIcon>
+                  <div>Kotlin</div>
+                </div>
+                <div className="flex flex-row mr-4 my-1">
+                  <ChevronRightIcon className="h-4 self-center"></ChevronRightIcon>
+                  <div>Multiplatform</div>
+                </div>
+                <div className="flex flex-row mr-4 my-1">
+                  <ChevronRightIcon className="h-4 self-center"></ChevronRightIcon>
+                  <div>SQLite</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Second Project */}
+          <div className="flex flex-col w-full items-center justify-center my-32 h-44">
+              {/* Image */}
+              <div className="flex-none relative h-56 w-full bg-white z-10 shadow-sm mt-10">
+              <Image
+                className="px-10"
+                src="/CBT.png"
+                alt="CBT Logo"
+                layout="fill"
+                objectFit="contain"
+              ></Image>
+            </div>
+            {/* Text and Banner */}
+            <div className="flex flex-col h-56 w-11/12 z-20 items-center mt-6 ">
+              <div className="flex flex-row w-full justify-start text-gray-800 font-semibold text-lg p-2">
+                Talent Pool Web App - Startup Project
+              </div>
+              <div className="h-auto w-auto bg-gray-600 px-4 py-3 text-white text-base font-sm shadow-2xl rounded-sm ">
+                {" "}
+                Developed a fullstack web application to centralize a candidate
+                repository with graphics analytics that enable talent recruiters
+                to match each candidate to a company&apos;s demands.
+              </div>
+              {/* Tech */}
+              <div className="flex flow-row flex-wrap w-full justify-start">
+                <div className="flex flex-row mr-4 my-1">
+                  <ChevronRightIcon className="h-4 self-center"></ChevronRightIcon>
+                  <div>Javascript</div>
+                </div>
+                <div className="flex flex-row mr-4 my-1">
+                  <ChevronRightIcon className="h-4 self-center"></ChevronRightIcon>
+                  <div>Firebase</div>
+                </div>
+                <div className="flex flex-row mr-4 my-1">
+                  <ChevronRightIcon className="h-4 self-center"></ChevronRightIcon>
+                  <div>Firestore</div>
+                </div>
+              </div>
+            </div>
+        
+          </div>
+        </div>
+        </>
+        }
+
+
+
+
+        <div className="h-32"></div>
         {/* Text */}
        
         {/* End Curriculum */}
       </div>
+    
 
       {/* Footer and Socials */}
       <div className="flex justify-end w-full z-10 ease-in duration-300 bg-white text-black p-4">
@@ -329,3 +464,4 @@ export default function Home() {
     </>
   );
 }
+
