@@ -1,28 +1,48 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import CommonContext from "@/context/CommonContext";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const context = React.useContext(CommonContext);
 
   const handleNav = () => {
     setNav(!nav);
   };
-  ///py-2 w-full  h-16 bg-gray-800 flex justify-between items-stretch overflow-y-visible
-  ///fixed top-0 left-0 w-full z-10 ease-in duration-300 bg-white
+
   return (
     <div className="fixed top-0 left-0 w-full z-10 ease-in duration-300 bg-white">
       <div className="max-w-7xl m-auto flex justify-between items-center p-4 text-black">
-        <Link href={"/"}>
-          <h1 className="font-bold text-4xl">FP</h1>
-        </Link>
+        <h1
+          className="font-bold text-4xl"
+          onClick={() => {
+            context?.executeScrollHome();
+          }}
+        >
+          FP
+        </h1>
 
         <ul className="hidden sm:flex">
           <li className="p-4">
-            <Link href="/"> Home </Link>
+            <div
+              onClick={() => {
+                context?.executeScrollHome();
+              }}
+            >
+              Home
+            </div>
           </li>
+
           <li className="p-4">
-            <Link href="/#about"> About Me </Link>
+            <div
+              onClick={() => {
+                context?.executeScroll();
+              }}
+            >
+              {" "}
+              About Me{" "}
+            </div>
           </li>
           {/* <li className="p-4">
             <Link href="/toys"> Cool Components </Link>
@@ -34,7 +54,7 @@ const Navbar = () => {
         {/* Mobile  Button*/}
         <div onClick={handleNav} className="block sm:hidden z-10">
           {nav ? (
-            <AiOutlineClose size={20}></AiOutlineClose>
+            <AiOutlineClose className="text-white" size={20}></AiOutlineClose>
           ) : (
             <AiOutlineMenu size={20}></AiOutlineMenu>
           )}
@@ -52,7 +72,14 @@ const Navbar = () => {
               <Link href="/"> Home </Link>
             </li>
             <li className="p-4 text-4xl hover:text-gray-500">
-              <Link href="/#about"> About Me </Link>
+              <div
+                onClick={() => {
+                  context?.executeScroll();
+                }}
+              >
+                {" "}
+                About Me{" "}
+              </div>
             </li>
             {/* <li className="p-4 text-4xl hover:text-gray-500">
               <Link href="/toys"> Cool Components </Link>
