@@ -11,14 +11,25 @@ import GithubIcon from "../components/svgs/githubIcon.svg";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
+// https://prod.spline.design/OiSlMjZJk5BgRcLh/scene.splinecode
+//https://prod.spline.design/FOfohzhuywvREHad/scene.splinecode
 import CommonContext from "@/context/CommonContext";
+import { Application } from "@splinetool/runtime";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  let canvas;
+  let app;
+  if (typeof document !== "undefined") {
+    canvas = document.getElementById("canvas3d") as HTMLCanvasElement;
+    app = new Application(canvas);
+    app.load("https://prod.spline.design/FOfohzhuywvREHad/scene.splinecode");
+  }
+
   const context = React.useContext(CommonContext);
   const size = useWindowSize();
-  
+
   const [tabSelected, setTabSelected] = useState("Asistobe");
 
   function useWindowSize() {
@@ -63,7 +74,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div ref={context?.homeRef} className="flex flex-col w-full h-full bg-gray-100">
+      <div
+        ref={context?.homeRef}
+        className="flex flex-col w-full h-full bg-gray-100"
+      >
         {/* Hero */}
         <div className="flex sm:flex-row flex-col-reverse h-screen w-full sm:justify-center justify-start">
           <div className="sm:h-screen sm:w-2/5 w-full h-96">
@@ -78,7 +92,7 @@ export default function Home() {
 
         {/* About Me */}
         <div ref={context?.aboutMeRef} className="h-96 sm:h-24"></div>
-        <div  className="flex flex-col w-3/4  self-center">
+        <div className="flex flex-col w-3/4  self-center">
           <div className="flex flex-row w-full content-start ">
             <div className="sm:w-6 py-4"></div>
             <h2 className="font-semibold text-3xl text-zinc-800 py-4">
@@ -162,15 +176,20 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-            <div className="flex-none relative sm:h-96 sm:w-96 sm:mt-0 mt-10  h-56 w-56 ">
-              <Image
+            {/* 
+            <div className="flex-none sm:h-96 sm:w-96 sm:mt-0 mt-10  h-56 w-56">
+     
+              {<Image
                 className="rounded-full hover:animate-pulse"
                 src="/Hotpot.png"
                 alt="Wave"
                 layout="fill"
                 objectFit="contain"
-              ></Image>
+              ></Image> }
+            </div> 
+            */}
+            <div className="flex ">
+              <canvas id="canvas3d"></canvas>
             </div>
           </div>
         </div>
@@ -231,7 +250,8 @@ export default function Home() {
                     <div className="mt-2">
                       Responsible for developing and maintaining a web tool for
                       the optimization of public transportation, using transport
-                      and mobile data.
+                      and mobile data. In my day to day, I mostly work with
+                      React, NodeJS, Express and MongoDB.
                     </div>
                   </>
                 ) : tabSelected === "University" ? (
@@ -243,7 +263,7 @@ export default function Home() {
                       Instituto Superior Técnico (2019 - 2021)
                     </div>
 
-                    <div className="mt-2">Cyber security specialization</div>
+                    <div className="mt-2">Cyber security minor</div>
 
                     <div className="font-semibold mt-4">
                       Bachelor&apos;s degree, Computer Science and Engineering
@@ -460,16 +480,12 @@ export default function Home() {
 
       {/* Footer and Socials */}
       <div className="flex justify-end w-full z-10 ease-in duration-300 bg-white text-black p-4">
-        <a
-          href="/FabioCVv2.pdf"
-        >
+        <a href="/FabioCVv2.pdf">
           <CVIcon className="w-6 h-6 m-2 mt-2"></CVIcon>
-
         </a>
         <a href="https://www.linkedin.com/in/fabio-pimenta-311280145/">
           <LinkedinIcon className="w-6 h-6 m-2"></LinkedinIcon>
         </a>
-        
 
         {/* <InstagramIcon className="w-6 h-6 m-2">
           <a href=""></a>

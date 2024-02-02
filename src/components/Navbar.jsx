@@ -44,9 +44,9 @@ const Navbar = () => {
               About Me{" "}
             </div>
           </li>
-          {/* <li className="p-4">
-            <Link href="/toys"> Cool Components </Link>
-          </li> */}
+          <li className="p-4">
+            <Link href="/poc"> PoC </Link>
+          </li>
           {/* <li className="p-4">
             <Link href="/contacts"> Contacts </Link>
           </li> */}
