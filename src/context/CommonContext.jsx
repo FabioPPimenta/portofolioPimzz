@@ -9,6 +9,10 @@ const CommonContextProvider = ({ children }) => {
   const executeScroll = () => aboutMeRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
   const homeRef = useRef(null);
   const executeScrollHome = () => homeRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  const journeyRef = useRef(null);
+  const executeScrollJourney = () => journeyRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  const projectsRef = useRef(null);
+  const executeScrollProjects = () => projectsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
 
   return (
     <CommonContextBase.Provider
@@ -16,7 +20,11 @@ const CommonContextProvider = ({ children }) => {
         aboutMeRef,
         executeScroll,
         homeRef,
-        executeScrollHome
+        executeScrollHome,
+        journeyRef,
+        executeScrollJourney,
+        projectsRef,
+        executeScrollProjects,
       }}
     >
       {children}

@@ -10,6 +10,19 @@ const POC = () => {
         <h2 className="font-semibold text-xl">
           Undergoing PoC for Payment API
         </h2>
+
+        <button className="h-12 w-36" onClick={()=>{
+          let response  = fetch('http://localhost:3000/api/payment/payment', {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+            }
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log('data',data);
+            });
+        }}>Request BABY!! </button>
       </div>
     </div>
   );
