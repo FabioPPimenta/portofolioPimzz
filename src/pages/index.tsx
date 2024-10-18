@@ -142,7 +142,7 @@ export default function Home() {
               </div>
             </section>
             <div className="w-full justify-center">
-              <WaveSVGBot classname="w-full" />
+              <WaveSVGBot className="w-full" />
             </div>
 
             {/* About Me */}
