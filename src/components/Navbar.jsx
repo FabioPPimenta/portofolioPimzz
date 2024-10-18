@@ -4,7 +4,6 @@ import CommonContext from "@/context/CommonContext";
 const Navbar = () => {
   const context = React.useContext(CommonContext);
 
-
   return (
     <div className="fixed top-0 left-0 w-full z-10 ease-in duration-300 bg-space_gray shadow-xl">
       <div className="max-w-7xl m-auto flex justify-between items-center p-4 text-white">
@@ -60,7 +59,6 @@ const Navbar = () => {
               Projects{" "}
             </button>
           </li>
-      
         </ul>
       </div>
     </div>

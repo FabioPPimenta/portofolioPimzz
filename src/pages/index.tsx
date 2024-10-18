@@ -107,7 +107,7 @@ export default function Home() {
             {/* Divider */}
             <div  className="w-full justify-center">
 
-              <WaveSVGTop classname="w-full" />
+              <WaveSVGTop className="w-full" />
               <div className="relative -top-72" ref={context?.aboutMeRef}></div>
             </div>
 
