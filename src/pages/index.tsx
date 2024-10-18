@@ -125,7 +125,7 @@ export default function Home() {
                     understanding of full-stack development.
                   </div>
                   <div className="py-2">
-                    While I'm comfortable across the stack, my strengths lie in
+                    While I&apos;m comfortable across the stack, my strengths lie in
                     frontend development. I enjoy solving complex problems and
                     collaborating with others, particularly when it comes to
                     brainstorming and whiteboard sessions.
