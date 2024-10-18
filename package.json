@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.17",
-    "@next/font": "13.1.6",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^0.9.497",
     "@types/node": "18.13.0",
